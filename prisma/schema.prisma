@@ -19,6 +19,7 @@ model Question {
   options     String? // JSON, but not supported out of the box in SQLite
   responses   Response[]
   required    Boolean
+  // order?
 
   // housekeeping?
   createdAt DateTime @default(now())
@@ -27,13 +28,13 @@ model Question {
 
 //response
 model Response {
-  id        Int    @id @default(autoincrement())
-  sessionId String // NOTE: How will we get this??
-  answer    String
+  id         Int    @id @default(autoincrement())
+  sessionId  String 
+  questionId Int
+  answer     String
 
   // relations
-  Question   Question? @relation(fields: [questionId], references: [id])
-  questionId Int?
+  Question Question? @relation(fields: [questionId], references: [id])
 
   // housekeeping?
   createdAt DateTime @default(now())
