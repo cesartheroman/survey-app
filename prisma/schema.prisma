@@ -2,11 +2,42 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator client {
-    provider = "prisma-client-js"
+  provider = "prisma-client-js"
 }
 
 datasource db {
-    provider = "sqlite"
-    url      = env("DATABASE_URL")
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
 }
 
+//question
+model Question {
+  id          Int        @id @default(autoincrement())
+  title       String
+  description String?
+  type        String // "text" | "number" | "select"
+  options     String? // JSON, but not supported out of the box in SQLite
+  responses   Response[]
+  required    Boolean
+
+  // housekeeping?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+//response
+model Response {
+  id        Int    @id @default(autoincrement())
+  sessionId String // NOTE: How will we get this??
+  answer    String
+
+  // relations
+  Question   Question? @relation(fields: [questionId], references: [id])
+  questionId Int?
+
+  // housekeeping?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// [sessionId: 432, {questionId: 123, answer: 30}, {questionId: 8734, answer: "hi there"}]]

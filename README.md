@@ -3,6 +3,7 @@
 ## Cesar's Gameplan
 
 ### Step 0: Setup + Planning Checklist
+[x] Commit
 
 ### Step 1: Setup up initial schema
 
