@@ -7,6 +7,7 @@ const questions = [
     type: "number",
     options: null,
     required: true,
+    order: 1,
   },
   {
     title: "What is your highest level of education completed?",
@@ -21,6 +22,7 @@ const questions = [
       "Other",
     ]),
     required: false,
+    order: 2,
   },
   // Health Questions
   {
@@ -29,6 +31,7 @@ const questions = [
     type: "text",
     options: null,
     required: false,
+    order: 3,
   },
   // Financial Questions
   {
@@ -45,6 +48,7 @@ const questions = [
       "$150,000 or more",
     ]),
     required: true,
+    order: 4,
   },
 ];
 
