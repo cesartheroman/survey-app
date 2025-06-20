@@ -29,9 +29,9 @@
 ### Step 5: Potential Improvements???
 
 ### Step 6: Wrap Up
-[] Push all commits
-[] Briefly summarize if had more time
-[] Update README - Trade-offs
+[x] Push all commits
+[x] Briefly summarize if had more time
+[x] Update README - Trade-offs
 
 ## Trade-offs, Design Choices, Future Improvements
 - I chose to start the project using the T3 stack to leverage its opinionated, full-stack, and type-safe foundation. This significantly accelerated my initial setup and development velocity by providing a pre-configured architecture with SQLite, Next.js, and TypeScript.
